@@ -36,16 +36,12 @@ def Combination2(m):
 
 for _ in range(int(input())):
     s=list(input())
-    substringCount = {}
+    substringCount = Counter()
 
-    li = [0]*26
     for i in range(0, len(s)):
         for j in range(i, len(s)):
-            tempS = hashableCounter(s[i:j+1])
-            if(tempS in substringCount):
-                substringCount[tempS] += 1
-            else:
-                substringCount[tempS] = 1
+            substringCount[hashableCounter(s[i:j+1])] += 1
+
 
     count = 0
 
